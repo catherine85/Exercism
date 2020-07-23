@@ -2,47 +2,55 @@ using System;
 
 public class SpaceAge
 {
+    private int ageSeconds; 
+    private const double earthDays = 365.25;
     public SpaceAge(int seconds)
     {
+      ageSeconds = seconds;
     }
 
     public double OnEarth()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return ageSeconds / 60 / 60 / 24 / earthDays;
     }
 
     public double OnMercury()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return FromEarth(0.2408467);
     }
 
     public double OnVenus()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return FromEarth(0.61519726);
     }
 
     public double OnMars()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return FromEarth(1.8808158);
     }
 
     public double OnJupiter()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return FromEarth(11.862615);
     }
 
     public double OnSaturn()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return FromEarth(29.447498);
     }
 
     public double OnUranus()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return FromEarth(84.016846) ;
     }
 
     public double OnNeptune()
     {
-        throw new NotImplementedException("You need to implement this function.");
+         return FromEarth(164.79132) ;
+    }
+
+    private double FromEarth(double part)
+    {
+        return OnEarth() / part;
     }
 }
